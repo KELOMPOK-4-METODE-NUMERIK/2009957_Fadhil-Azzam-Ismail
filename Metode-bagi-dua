@@ -1,0 +1,23 @@
+#untuk menggunakan fungsi lain silahkan fungsi dirubah sesuai dengan permasalahan.
+def f(x):
+    return pow(x,3) + 4*x**2 - 10 #fungsi f(x)
+
+# a dan b adalah pemilihan batas interval
+a = 1
+b = 2
+e = 0.0001
+r=0
+n=3
+print('  r  |     a    |     c    |     b    |   f(a)   |   f(c)   |   f(b)   |  selang |   (a-b) ')
+print('-------------------------------------------------------------------------------------------')
+while(abs(a-b) > e):
+      c = (a+b)/2
+      if(f(a)*f(c) < 0):
+          print(f' {r:2d}  | {a:8.5f} | {c:8.5f} | {a:8.5f} | {f(a):8.5f} | {f(c):8.5f} | {f(b):8.5f} |  [a,c]  | {abs(a-b):8.5f}')
+          b = c
+      else:
+          print(f' {r:2d}  | {a:8.5f} | {c:8.5f} | {a:8.5f} | {f(a):8.5f} | {f(c):8.5f} | {f(b):8.5f} |  [b,c]  | {abs(a-b):8.5f}')
+          a = c
+      r = r + 1
+print('-------------------------------------------------------------------------------------------')
+print(f'Akar hampiran adalah nilai c = {c:.5f}')
